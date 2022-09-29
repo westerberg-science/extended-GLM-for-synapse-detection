@@ -19,7 +19,9 @@ end
 % rough estimate of # of time difference required (assuming independence)
 maxTTT = (Tb-Ta);
 eN = ceil((max(N1, N2))^2 * maxTTT * 2 / min(st1(end), st2(end)));
-deltaT = zeros(10 * eN, 3);
+
+% switched to smaller data type *JAW*
+deltaT = zeros(10 * eN, 3, 'int8');
 
 % Compute all the time differences
 lastStartIdx = 1;

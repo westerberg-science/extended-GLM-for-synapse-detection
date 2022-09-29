@@ -20,10 +20,11 @@ end
 
 NN = length(spikes); 
 
+% Modifying distance to work in 3D
 distance = zeros(NN,NN);
 for i = 1:NN
     for j = 1:NN
-        distance(i,j) = sqrt((location.x(i)-location.x(j))^2 + (location.y(i)-location.y(j))^2);
+        distance(i,j) = norm(location(i,:) - location(j,:));
     end
 end
 
