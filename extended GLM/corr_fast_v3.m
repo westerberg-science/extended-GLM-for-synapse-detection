@@ -20,17 +20,13 @@ end
 maxTTT = (Tb-Ta);
 eN = ceil((max(N1, N2))^2 * maxTTT * 2 / min(st1(end), st2(end)));
 
-% switched to smaller data type *JAW*
-deltaT = zeros(10 * eN, 3, 'int8');
+% switched to smaller data type and removed the seemingly unecessary 10*eN *JAW*
+deltaT = zeros(eN, 3, 'int8');
 
-% Compute all the time differences
+% Compute all the time differences 
 lastStartIdx = 1;
 k = 1;
 for n = 1:N1
-    %     incIdx = find((st2(lastStartIdx:N2) - st1(n) >= Ta), 1, 'first');
-    %     if ~isempty(incIdx)
-    %         lastStartIdx = lastStartIdx + incIdx(1) - 1;
-    % disp(lastStartIdx);
     incIdx = 0;
     for m = lastStartIdx:N2
         timeDiff = st2(m) - st1(n);
