@@ -42,11 +42,11 @@ t = t+mean(diff(t))/2;
 t = t(1:interval/binsize+1);
 
 CCG = cell(0);
-for i=1: 25 %NN
+for i=1:NN
     if length(Tlist{i}) <= 1000 && ignore_index ==1
         continue
     end
-    for j=(i+1): 25 %NN
+    for j=(i+1):NN
         if length(Tlist{j}) <= 1000 && ignore_index ==1
             continue
         end

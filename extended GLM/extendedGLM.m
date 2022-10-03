@@ -87,6 +87,14 @@ for post= 1:NN
     
 end
 
+if ~exist('options', 'var')
+    model_fits.glm = [];
+    model_fits.exc = [];
+    model_fits.inh = [];
+    model_fits.stage1 = [];
+    return
+end
+
 % Estimation of the “conduction velocity”
 
 llr = llh_s1 - llh_glm;
